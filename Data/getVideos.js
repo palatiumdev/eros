@@ -24,7 +24,5 @@ export default async function getVideos(playlistId) {
 
     const responseData = videos;
 
-    //TO DO: move videos push here
-
     return responseData;
 }

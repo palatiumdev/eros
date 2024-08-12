@@ -20,7 +20,7 @@ import getStats from "@/Data/getStats";
 export default async function Home() {
   const home = await getHome();
   //work
-  const videos = await getVideos(home[0].workPlaylist) //TO DO change to home[0].workPlaylist
+  const videos = await getVideos(home[0].workPlaylist)
   const stats = await getStats(home[0].statsUrl)
 
   return (
@@ -53,13 +53,13 @@ export default async function Home() {
         })}
       </div>
 
-      <div className="w-full sm:px-24 p-5">
+      <div className="w-full sm:px-24 2xl:px-96 p-5">
         <ContactCard contactTitle={home[0].contactTitle} contactText={<PortableText value={home[0].contactText} />} />
       </div>
 
-      <Stats />
+      {/*<Stats />*/}
 
-      <div className="w-full sm:px-24 p-5">
+      <div className="w-full sm:px-24 2xl:px-96 p-5">
         <Work>
           {videos.map((video, i) => {
             return <Thumbnail videoId={video} key={i} />

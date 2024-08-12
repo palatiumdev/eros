@@ -1,10 +1,10 @@
 //TO DO
-const Stats = () => {
+const Stats = ({stats}) => {
   return (
     <div className="lg:flex grid gap-8">
-      <Stat title={"3+ years"} text={"Editing experience"} />
-      <Stat title={"3+ years"} text={"Editing experience"} />
-      <Stat title={"3+ years"} text={"Editing experience"} />
+      {stats.map((stat, i) => {
+        return <Stat title={stat.title} text={stat.text} />
+      })}
     </div>
   )
 }
