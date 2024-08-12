@@ -7,7 +7,9 @@ const Hero = ({ heroText, heroImage }) => {
         <div className="relative min-h-[39rem] grid place-items-center m-auto">
             <div className="z-10 grid place-items-center gap-32">
                 <div className="text-3xl sm:text-5xl text-center">
-                    {heroText}
+                    <h1>Turning your RAW footage into viral content 🚀</h1>
+
+                    <h1>Over 50M+ Views on Long-Form Content 🔥🔥🔥</h1>
                 </div>
                 <Button text={"Work with me"} link={"https://x.com/erosfx_"} />
             </div>

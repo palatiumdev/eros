@@ -40,6 +40,6 @@ export async function getHome() {
             workVideos,
             footerHeading,
             footerCopyright,
-        }` , {}, { next: { revalidate: 3600 } } //TO DO: Web hook solution
+        }` , {}, { cache: "force-cache", next: { tags: ["home"], revalidate: 1 } }  //TO DO: Web hook solution
     )
 }

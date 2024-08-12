@@ -1,48 +1,31 @@
-import { isValidSignature, SIGNATURE_HEADER_NAME } from '@sanity/webhook'
+import { revalidateTag } from "next/cache";
+import { NextResponse } from "next/server";
+import { parseBody } from "next-sanity/webhook";
 
-// Secret from environment variables
-const secret = process.env.MY_WEBHOOK_SECRET
+export async function POST(req) {
+  try {
+    const { body, isValidSignature } = await parseBody(
+      req,
+      process.env.NEXT_PUBLIC_SANITY_HOOK_SECRET
+    );
 
-// Handler for the API route
-export default async function handler(req, res) {
-  const signature = req.headers[SIGNATURE_HEADER_NAME]
+    if (!isValidSignature) {
+      return new Response("Invalid Signature", { status: 401 });
+    }
 
-  // Read the body into a string
-  const body = await readBody(req)
+    if (!body?._type) {
+      return new Response("Bad Request", { status: 400 });
+    }
 
-  // Validate the signature
-  if (!(await isValidSignature(body, signature, secret))) {
-    res.status(401).json({ success: false, message: 'Invalid signature' })
-    return
+    revalidateTag(body._type);
+    return NextResponse.json({
+      status: 200,
+      revalidated: true,
+      now: Date.now(),
+      body,
+    });
+  } catch (error) {
+    console.error(error);
+    return new Response(error.message, { status: 500 });
   }
-
-  // Parse the JSON body
-  const jsonBody = JSON.parse(body)
-
-  // Process the payload
-  doSomeMagicWithPayload(jsonBody)
-
-  // Send success response
-  res.json({ success: true })
-}
-
-// Disable Next.js default body parsing
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-}
-
-// Function to read the body of the request
-async function readBody(readable) {
-  const chunks = []
-  for await (const chunk of readable) {
-    chunks.push(chunk)
-  }
-  return Buffer.concat(chunks).toString('utf8')
-}
-
-// Replace with actual implementation
-function doSomeMagicWithPayload(payload) {
-  // Implement your logic here
 }
