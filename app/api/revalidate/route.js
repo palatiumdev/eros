@@ -37,7 +37,7 @@ export const config = {
 async function readBody(readable) {
   const chunks = []
   for await (const chunk of readable) {
-    chunks.push(typeof chunk === 'string' ? Buffer.from(chunk) : chunk)
+    chunks.push(chunk)
   }
   return Buffer.concat(chunks).toString('utf8')
 }
