@@ -20,9 +20,9 @@ import getStats from "@/Data/getStats";
 export default async function Home() {
   const home = await getHome();
   //work
-  const videos = await getVideos(home[0].workPlaylist) //TO DO change to home[0].workPlaylist
+  const videos = await getVideos("PL5f66hSFNH_oaE05CRFbMnsQcV6RWBIo8") //TO DO change to home[0].workPlaylist
 
-  const stats = await getStats(home[0].statsUrl)
+  const stats = await getStats("PL5f66hSFNH_oaE05CRFbMnsQcV6RWBIo8")
 
   return (
     <main className=" grid w-full place-items-center pt-5 gap-16">
