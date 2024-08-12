@@ -5,6 +5,7 @@ export async function getHome() {
         projectId: 'uusho6ar',
         dataset: 'production',
         apiVersion: "2024-08-10",
+        useCdn: false,
 
     })
 
@@ -14,7 +15,7 @@ export async function getHome() {
             _createdAt,
             headerText,
             heroText,  
-            "heroImageUrl": heroImage.asset->url,
+            "heroImage": heroImage.asset->url,
             video1,
             video2,
             creators,
@@ -37,9 +38,9 @@ export async function getHome() {
             contactText,
             statsUrl,
             workTitle,
-            workVideos,
+            workPlaylist,
             footerHeading,
             footerCopyright,
-        }` , {}, { cache: "force-cache", next: { tags: ["home"], revalidate: 1 } }  //TO DO: Web hook solution
+        }` , {}, { cache: "force-cache", next: { tags: ["home"] } }  //TO DO: Web hook solution
     )
 }
