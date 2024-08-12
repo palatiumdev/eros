@@ -25,6 +25,7 @@ export default async function Home() {
 
   return (
     <main className=" grid w-full place-items-center pt-5 gap-16">
+
       <div className="w-full">
         <Header headerText={home[0].headerText} logo={""} /> {/* TO DO: add logo */}
       </div>
@@ -53,13 +54,13 @@ export default async function Home() {
         })}
       </div>
 
-      <div className="w-full sm:px-24 2xl:px-96 p-5">
+      <div className="w-full  p-5">
         <ContactCard contactTitle={home[0].contactTitle} contactText={<PortableText value={home[0].contactText} />} />
       </div>
 
       {/*<Stats />*/}
 
-      <div className="w-full sm:px-24 2xl:px-96 p-5">
+      <div className="w-full">
         <Work>
           {videos.map((video, i) => {
             return <Thumbnail videoId={video} key={i} />
