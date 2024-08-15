@@ -7,7 +7,7 @@ const Creator = async ({ channelId }) => {
     return (
         <div className="flex gap-4 place-items-center">
             {/*The image size depends on this div*/}
-            <div className="relative size-20">
+            <div className="relative size-24">
                 <Image
                     src={user.profileImage}
                     fill={true}
@@ -16,8 +16,8 @@ const Creator = async ({ channelId }) => {
                 />
             </div>
             <div className="text-center">
-                <h1 className="text-xl">{user.username}</h1>
-                <p className="text-lg text-primary">{user.subCount} subs</p>
+                <h1 className="text-2xl">{user.username}</h1>
+                <p className="text-xl text-primary">{user.subCount} subs</p>
             </div>
         </div>
     )

@@ -52,6 +52,11 @@ export default async function Home() {
         </Slider>
       </div>
 
+      <div className="text-center grid gap-8">
+        <h1 className="text-6xl">DON'T TAKE MY WORD</h1>
+        <p className="text-5xl">Here's some feedback from clients</p>
+      </div>
+
       <div className="flex gap-16">
         {home[0].testimonials.map((creator, i) => {
           return <Testimonial userPic={creator.creator.asset.url} testimonialPic={creator.testimonial.asset.url} isRight={i % 2 == 0 ? false : true} key={i} />
@@ -66,13 +71,11 @@ export default async function Home() {
         <ContactCard contactTitle={home[0].contactTitle} contactText={<PortableText value={home[0].contactText} />} />
       </div>
 
-      <div className="w-[110rem]">
-        <Work>
-          {videos.map((video, i) => {
-            return <Thumbnail videoId={video} key={i} />
-          })}
-        </Work>
-      </div>
+      <Work>
+        {videos.map((video, i) => {
+          return <Thumbnail videoId={video} key={i} />
+        })}
+      </Work>
 
       <Footer footerHeading={home[0].footerHeading} footerCopyright={home[0].footerCopyright} />
 
