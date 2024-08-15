@@ -23,10 +23,21 @@ export default async function Home() {
   const videos = await getVideos(home[0].workPlaylist)
   const stats = await getStats(home[0].statsUrl)
 
+  const myPortableTextComponents = {
+    // ...,
+    marks: {
+      textColor: ({ children, value }) => <span style={{ color: value.value }}>{children}</span>,
+      highlightColor: ({ children, value }) => (
+        <span style={{ background: value.value }}>{children}</span>
+      ),
+    },
+  }
+
+
   return (
     <main className=" grid w-full place-items-center pt-5 gap-32">
       <div className="place-items-center place-content-center grid-cols-2 grid gap-16 w-[110rem] mt-16">
-        <Hero heroText={<PortableText value={home[0].heroText} />} heroImage={home[0].heroImage} />
+        <Hero heroText={<PortableText value={home[0].heroText} components={myPortableTextComponents} />} heroImage={home[0].heroImage} />
         <Video videoId={home[0].video1} />
         <Video videoId={home[0].video2} />
       </div>
@@ -48,10 +59,11 @@ export default async function Home() {
       </div>
 
       <div className="w-[110rem]">
-        <ContactCard contactTitle={home[0].contactTitle} contactText={<PortableText value={home[0].contactText} />} />
+        <Stats stats={[{ title: "3+", text: "Years edited" }, { title: "50.000.000", text: "views generated" },]} />
       </div>
+
       <div className="w-[110rem]">
-        <Stats stats={[{ title: "3+", text: "Years edited" }, { title: "50.000.000", text: "views generated" }, { title: "?", text: "?" }]} />
+        <ContactCard contactTitle={home[0].contactTitle} contactText={<PortableText value={home[0].contactText} />} />
       </div>
 
       <div className="w-[110rem]">

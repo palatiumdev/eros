@@ -1,5 +1,6 @@
 import { defineConfig } from 'sanity'
 import { structureTool } from 'sanity/structure'
+import { simplerColorInput } from 'sanity-plugin-simpler-color-input'
 import home from './sanity/home-schema';
 
 const config = defineConfig({
@@ -8,7 +9,16 @@ const config = defineConfig({
     projectId: 'uusho6ar',
     dataset: 'production',
     apiVersion: "2024-08-10",
-    plugins: [structureTool()],
+    plugins: [structureTool(), simplerColorInput({
+        defaultColorFormat: 'rgba',
+        defaultColorList: [
+            { label: 'White', value: '#fffffb' },
+            { label: 'Black', value: '#000000' },
+            { label: 'Yellow', value: '#ffc145' },
+            { label: 'Custom...', value: 'custom' },
+        ],
+        enableSearch: true,
+    })],
     basePath: "/admin",
     schema: { types: [home] }
 })

@@ -12,7 +12,12 @@ const home = {
             name: 'heroText',
             title: 'Hero text',
             type: "array",
-            of: [{ type: "block" }]
+            of: [{
+                type: "block",
+                marks: {
+                    annotations: [{ type: 'textColor', }]
+                },
+            }]
         },
         {
             name: "heroImage",
