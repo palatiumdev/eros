@@ -4,7 +4,7 @@ import Image from "next/image"
 
 const Thumbnail = ({ videoId }) => {
     return (
-        <button className="relative aspect-video w-80 2xl:w-96" onClick={() => { window.open(`https://www.youtube.com/watch?v=${videoId}`, "_blank") }}>
+        <button className="relative aspect-video w-80 2xl:w-80" onClick={() => { window.open(`https://www.youtube.com/watch?v=${videoId}`, "_blank") }}>
             <Image
                 src={`https://img.youtube.com/vi/${videoId}/mqdefault.jpg`}
                 fill={true}
@@ -14,5 +14,7 @@ const Thumbnail = ({ videoId }) => {
         </button>
     )
 }
+
+
 
 export default Thumbnail

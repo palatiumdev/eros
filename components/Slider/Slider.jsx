@@ -5,7 +5,7 @@ const Slider = ({ children }) => {
 
     const duplicatedSlides = [...children, ...children];
     //change this value for the distance between the children
-    const containerLength = children.length * 16;
+    const containerLength = children.length * 20;
 
     return (
         <div style={{ width: `${containerLength}rem` }}>
@@ -16,7 +16,7 @@ const Slider = ({ children }) => {
                         x: ['-100%', '0%'],
                         transition: {
                             ease: 'linear',
-                            duration: 10,
+                            duration: 40,
                             repeat: Infinity,
                         }
                     }}

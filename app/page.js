@@ -24,22 +24,15 @@ export default async function Home() {
   const stats = await getStats(home[0].statsUrl)
 
   return (
-    <main className=" grid w-full place-items-center pt-5 gap-16">
-
-      <div className="w-full">
-        <Header headerText={home[0].headerText} logo={""} /> {/* TO DO: add logo */}
-      </div>
-      <div className="w-full">
+    <main className=" grid w-full place-items-center pt-5 gap-32">
+      <div className="place-items-center place-content-center grid-cols-2 grid gap-16 w-[110rem] mt-16">
         <Hero heroText={<PortableText value={home[0].heroText} />} heroImage={home[0].heroImage} />
-      </div>
-
-      <div className="w-full place-items-center place-content-center lg:flex grid grid-cols-1 gap-8 sm:gap-16 px-5">
         <Video videoId={home[0].video1} />
         <Video videoId={home[0].video2} />
       </div>
 
-      <div className="relative max-w-80 lg:max-w-[80rem] overflow-clip grid gap-8 place-content-center">
-        <p className="text-center">Creators worked with</p>
+      <div className="relative max-w-80 lg:max-w-[90rem] overflow-clip grid gap-8 place-content-center">
+        <p className="text-center text-xl">Creators worked with</p>
         <div className="absolute h-full w-full bg-gradient-to-r from-background via-transparent to-background z-10"></div>
         <Slider>
           {home[0].creators.map((creator, i) => {
@@ -48,19 +41,21 @@ export default async function Home() {
         </Slider>
       </div>
 
-      <div className="grid gap-8">
+      <div className="flex gap-16">
         {home[0].testimonials.map((creator, i) => {
           return <Testimonial userPic={creator.creator.asset.url} testimonialPic={creator.testimonial.asset.url} isRight={i % 2 == 0 ? false : true} key={i} />
         })}
       </div>
 
-      <div className="w-full  p-5">
+      <div className="w-[110rem]">
         <ContactCard contactTitle={home[0].contactTitle} contactText={<PortableText value={home[0].contactText} />} />
       </div>
+      <div className="w-[110rem]">
+        <Stats stats={[{ title: "3+", text: "Years edited" }, { title: "50.000.000", text: "views generated" }, { title: "?", text: "?" }]} />
 
-      {/*<Stats />*/}
+      </div>
 
-      <div className="w-full">
+      <div className="w-[110rem]">
         <Work>
           {videos.map((video, i) => {
             return <Thumbnail videoId={video} key={i} />

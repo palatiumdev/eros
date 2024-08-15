@@ -1,16 +1,14 @@
 import Image from "next/image"
 
-const Testimonial = ({ userPic, testimonialPic, isRight = false }) => {
-    let position = "size-24 rounded-3xl lg:absolute lg:order-2 -left-40";
-    if (isRight) { position = "-right-40 size-24 rounded-3xl lg:absolute lg:order-2" }
+const Testimonial = ({ userPic, testimonialPic }) => {
     return (
-        <div className="relative grid place-items-center lg:flex items-center gap-8 m-5">
+        <div className="relative grid place-items-center h-fit gap-8">
             <Image
                 src={userPic}
-                width={500}
-                height={500}
+                width={800}
+                height={800}
                 alt="Creator profile pic"
-                className={position}
+                className={"size-32 rounded-3xl"}
             />
 
             <Image

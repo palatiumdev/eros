@@ -8,9 +8,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "primary": "#14AFCF",
-        "background": "#121F2B",
-        "accent": "#011627",
+        "primary": "#ffc145",
+        "background": "#162442",
+        "accent": "#121D36",
+        "white": "#fffffb",
       },
       fontFamily: {
         sans: ['var(--font-tommy)'],
