@@ -4,7 +4,7 @@ import Button from "../Button/Button";
 
 const Hero = ({ heroText, heroImage }) => {
     return (
-        <div className="relative col-span-2 min-h-[40rem] grid place-items-center m-auto w-full rounded-3xl overflow-clip">
+        <div className="relative col-span-2 min-h-[40rem] grid place-items-center m-auto w- overflow-clip">
             <div className="z-10 grid place-items-center gap-16">
                 <div className="text-3xl sm:text-6xl text-center">
                     {heroText}
@@ -17,7 +17,10 @@ const Hero = ({ heroText, heroImage }) => {
                 alt="Hero video"
                 className="object-cover -z-10 absolute"
             />
-            <div className="absolute bg-background/50 size-full"></div>
+            <div className="absolute bg-background/50 size-full" ></div>
+            <div className="absolute bg-gradient-to-r from-background via-transparent to-background size-full" ></div>
+            <div className="absolute bg-gradient-to-b from-background via-transparent to-background size-full" ></div>
+
         </div>
     )
 }

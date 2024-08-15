@@ -93,7 +93,12 @@ const home = {
             name: 'contactText',
             title: 'Contact text',
             type: "array",
-            of: [{ type: "block" }]
+            of: [{
+                type: "block",
+                marks: {
+                    annotations: [{ type: 'textColor', }]
+                },
+            }]
         },
         {
             name: 'statsUrl',
