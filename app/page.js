@@ -31,8 +31,8 @@ export default async function Home() {
         <Video videoId={home[0].video2} />
       </div>
 
-      <div className="relative max-w-80 lg:max-w-[90rem] overflow-clip grid gap-8 place-content-center">
-        <p className="text-center text-xl">Creators worked with</p>
+      <div className="relative max-w-80 lg:max-w-[90rem] overflow-clip grid gap-10 place-content-center">
+        <p className="text-center text-4xl ">Creators worked with</p>
         <div className="absolute h-full w-full bg-gradient-to-r from-background via-transparent to-background z-10"></div>
         <Slider>
           {home[0].creators.map((creator, i) => {
@@ -52,7 +52,6 @@ export default async function Home() {
       </div>
       <div className="w-[110rem]">
         <Stats stats={[{ title: "3+", text: "Years edited" }, { title: "50.000.000", text: "views generated" }, { title: "?", text: "?" }]} />
-
       </div>
 
       <div className="w-[110rem]">
