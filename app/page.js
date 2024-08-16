@@ -45,7 +45,7 @@ export default async function Home() {
       </div>
 
       <div className="relative max-w-80 lg:max-w-[90rem] overflow-clip grid gap-8 place-content-center">
-        <p className="text-center text-4xl ">Creators worked with</p>
+        <p className="text-center text-4xl m-1">Creators worked with</p>
         <div className="absolute h-full w-full bg-gradient-to-r from-background via-transparent to-background z-10"></div>
         <Slider>
           {home[0].creators.map((creator, i) => {
@@ -79,7 +79,6 @@ export default async function Home() {
             return <Thumbnail videoId={video} key={i} />
           })}
         </Work>
-
         <Footer footerHeading={home[0].footerHeading} footerCopyright={home[0].footerCopyright} />
       </div>
     </main >
