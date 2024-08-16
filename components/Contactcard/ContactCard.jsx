@@ -12,7 +12,7 @@ import Button from "../Button/Button";
 
 const ContactCard = ({ contactTitle, contactText }) => {
     return (
-        <div className="w-fit lg:w-full m-auto px-10 py-10 sm:py-20 gap-16 text-center rounded-3xl grid place-items-center">
+        <div className="w-fit lg:w-full m-auto gap-16 text-center rounded-3xl grid place-items-center">
             <div className="grid gap-8">
                 <h1 className="sm:text-6xl text-3xl">{contactTitle}</h1>
                 <div className="font-mono sm:text-5xl text-2xl text-center grid gap-8 sm:gap-0">
