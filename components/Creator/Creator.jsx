@@ -5,7 +5,7 @@ const Creator = async ({ channelId }) => {
     const user = await getCreator(channelId)
 
     return (
-        <div className="flex gap-4 place-items-center size-fit">
+        <div className="flex gap-8 place-items-center size-fit">
             {/*The image size depends on this div*/}
             <div className="relative size-24">
                 <Image

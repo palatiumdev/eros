@@ -46,7 +46,7 @@ export default async function Home() {
 
       <div className="relative overflow-clip grid gap-8 place-content-center">
         <p className="text-center text-4xl m-1">Creators worked with</p>
-        <div className="absolute h-full w-full z-10 pointer-events-none bg-background" style={{ maskImage: 'linear-gradient(to right, black, transparent, transparent, black)', }} />
+        <div className="absolute h-full w-full z-10 pointer-events-none bg-background" style={{ maskImage: 'linear-gradient(to right, black, transparent, transparent, transparent, black)', }} />
         <Slider>
           {home[0].creators.map((creator, i) => {
             return <Creator channelId={creator.userId} key={i} />
