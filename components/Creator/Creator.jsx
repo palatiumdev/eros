@@ -5,7 +5,7 @@ const Creator = async ({ channelId }) => {
     const user = await getCreator(channelId)
 
     return (
-        <div className="flex gap-4 place-items-center">
+        <div className="flex gap-4 place-items-center size-fit">
             {/*The image size depends on this div*/}
             <div className="relative size-24">
                 <Image
@@ -15,7 +15,7 @@ const Creator = async ({ channelId }) => {
                     className="absolute rounded-full"
                 />
             </div>
-            <div className="text-center">
+            <div className="text-center text-nowrap	">
                 <h1 className="text-2xl">{user.username}</h1>
                 <p className="text-xl text-primary">{user.subCount} subs</p>
             </div>
