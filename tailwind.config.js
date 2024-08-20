@@ -12,7 +12,6 @@ module.exports = {
         "background": "#162442",
         "accent": "#121D36",
         "white": "#fffffb",
-        "yellow": "#ffc145",
       },
       fontFamily: {
         sans: ['var(--font-tommy)'],

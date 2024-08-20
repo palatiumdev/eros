@@ -12,7 +12,7 @@ const Stats = ({ stats }) => {
 const Stat = ({ title, text, cards }) => {
   return (
     <div style={{ width: `${70 / cards}%` }}>
-      <div className="bg-primary w-full h-fit p-5 rounded-xl text-center grid place-items-center text-yellow">
+      <div className="bg-primary w-full h-fit p-5 rounded-xl text-center grid place-items-center text-[#FFFF00]">
         <div>
           <h1 className="text-2xl sm:text-5xl">{title}</h1>
           <p className="text-xl">{text}</p>

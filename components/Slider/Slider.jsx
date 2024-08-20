@@ -5,7 +5,7 @@ import useMeasure from "react-use-measure";
 
 const Slider = ({ children }) => {
     const FAST_DURATION = 25;
-    const SLOW_DURATION = 75;
+    const SLOW_DURATION = 30;
 
     const [duration, setDuration] = useState(FAST_DURATION);
     let [ref, { width }] = useMeasure();
@@ -21,7 +21,7 @@ const Slider = ({ children }) => {
 
         if (mustFinish) {
             controls = animate(xTranslation, [xTranslation.get(), finalPosition], {
-                ease: "linear",
+                ease: "inertia",
                 duration: duration * (1 - xTranslation.get() / finalPosition),
                 onComplete: () => {
                     setMustFinish(false);
@@ -30,7 +30,7 @@ const Slider = ({ children }) => {
             });
         } else {
             controls = animate(xTranslation, [0, finalPosition], {
-                ease: "linear",
+                ease: "inertia",
                 duration: duration,
                 repeat: Infinity,
                 repeatType: "loop",
