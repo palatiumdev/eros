@@ -14,7 +14,7 @@ const config = defineConfig({
         defaultColorList: [
             { label: 'White', value: '#fffffb' },
             { label: 'Black', value: '#000000' },
-            { label: 'Yellow', value: '#ffc145' },
+            { label: 'Yellow', value: '#ffff00' },
             { label: 'Custom...', value: 'custom' },
         ],
         enableSearch: true,

@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import useMeasure from "react-use-measure";
 
 const Slider = ({ children }) => {
-    const FAST_DURATION = 25;
-    const SLOW_DURATION = 30;
+    const FAST_DURATION = 20;
+    const SLOW_DURATION = 40;
 
     const [duration, setDuration] = useState(FAST_DURATION);
     let [ref, { width }] = useMeasure();
@@ -21,7 +21,7 @@ const Slider = ({ children }) => {
 
         if (mustFinish) {
             controls = animate(xTranslation, [xTranslation.get(), finalPosition], {
-                ease: "inertia",
+                ease: "linear",
                 duration: duration * (1 - xTranslation.get() / finalPosition),
                 onComplete: () => {
                     setMustFinish(false);
@@ -30,7 +30,7 @@ const Slider = ({ children }) => {
             });
         } else {
             controls = animate(xTranslation, [0, finalPosition], {
-                ease: "inertia",
+                ease: "linear",
                 duration: duration,
                 repeat: Infinity,
                 repeatType: "loop",
@@ -42,7 +42,7 @@ const Slider = ({ children }) => {
     }, [rerender, xTranslation, duration, width]);
 
     return (
-        <div className="py-8 w-[110rem] h-32">
+        <div className="py-8 w-[90vw] h-36">
             <motion.div
                 className="absolute left-0 flex gap-4"
                 style={{ x: xTranslation }}
