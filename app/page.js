@@ -34,17 +34,20 @@ export default async function Home() {
 
 
   return (
-    <main className=" grid w-full place-items-center pt-5 gap-32">
-      <div className="place-items-center place-content-center w-fit mt-16 grid gap-8">
-        <h1 className="text-6xl w-full text-center ">EROSFX</h1>
-        <div className="grid-cols-2 grid gap-8 w-[110rem]">
+    <main className="grid w-full place-items-center pt-5 gap-32">
+
+      <div className="w-full  mt-16 grid gap-8 px-5 xl:px-[10%]">
+        <div className="flex flex-col gap-8 w-full">
+          <h1 className="text-6xl w-full text-center ">EROSFX</h1>
           <Hero heroText={<PortableText value={home[0].heroText} components={myPortableTextComponents} />} heroImage={home[0].heroImage} />
-          <Video videoId={home[0].video1} />
-          <Video videoId={home[0].video2} />
+          <div className="grid lg:grid-cols-2 gap-8 grid-cols-1 w-full">
+            <Video videoId={home[0].video1} />
+            <Video videoId={home[0].video2} />
+          </div>
         </div>
       </div>
 
-      <div className="relative overflow-clip grid gap-8 place-content-center">
+      <div className="relative overflow-clip grid gap-8 place-content-center px-5 xl:p-0">
         <p className="text-center text-4xl m-1">Creators worked with</p>
         <div className="absolute h-full w-full z-10 pointer-events-none bg-background" style={{ maskImage: 'linear-gradient(to right, black , transparent 5%, transparent 50%, transparent 95%, black )', }} />
         <Slider>
@@ -54,22 +57,22 @@ export default async function Home() {
         </Slider>
       </div>
 
-      <div className="text-center grid gap-8">
-        <h1 className="text-6xl">DON'T TAKE MY WORD...</h1>
-        <p className="text-5xl">Here's some feedback from clients:</p>
+      <div className="text-center grid gap-8 px-5 xl:p-0">
+        <h1 className="sm:text-6xl text-4xl">DON'T TAKE MY WORD...</h1>
+        <p className="sm:text-5xl text-4xl">Here's some feedback from clients:</p>
       </div>
 
-      <div className="flex gap-8">
+      <div className="grid lg:gap-8 gap-24 lg:grid-cols-3 grid-cols-1 px-5 lg:px-5">
         {home[0].testimonials.map((creator, i) => {
-          return <Testimonial userPic={creator.creator.asset.url} testimonialPic={creator.testimonial.asset.url} isRight={i % 2 == 0 ? false : true} key={i} />
+          return <Testimonial userPic={creator.creator.asset.url} testimonialPic={creator.testimonial.asset.url} key={i} />
         })}
       </div>
 
-      <div className="w-[110rem]">
+      <div className="w-full px-5 lg:w-2/3">
         <Stats stats={[{ title: "3+", text: "Years edited" }, { title: "50.000.000", text: "views generated" },]} />
       </div>
 
-      <div className="w-[110rem]">
+      <div className="w-full px-5 xl:p-0">
         <ContactCard contactTitle={home[0].contactTitle} contactText={<PortableText value={home[0].contactText} />} />
       </div>
 

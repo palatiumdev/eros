@@ -17,7 +17,7 @@ const Slider = ({ children }) => {
 
     useEffect(() => {
         let controls;
-        let finalPosition = -width / 2 - 8;
+        let finalPosition = -width / 2;
 
         if (mustFinish) {
             controls = animate(xTranslation, [xTranslation.get(), finalPosition], {
